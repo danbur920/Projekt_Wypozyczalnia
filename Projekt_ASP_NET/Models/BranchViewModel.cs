@@ -3,8 +3,8 @@
     public class BranchViewModel
     {
         public int Id { get; set; }
-        public string City { get; set; }
+        public string Locality { get; set; }
         public int? NumberOfVehicles { get; set; }
-        public virtual List<VehicleItemViewModel>? VehicleItems { get; set; }
+        public virtual List<ItemViewModel>? VehicleItems { get; set; }
     }
 }

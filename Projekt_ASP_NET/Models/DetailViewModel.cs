@@ -1,6 +1,6 @@
 ﻿namespace Projekt_ASP_NET.Models
 {
-    public class VehicleDetailViewModel
+    public class DetailViewModel
     {
         public int Id { get; set; }
         public float? Length { get; set; }
@@ -11,6 +11,6 @@
         public bool IsCombustionVehicle { get; set; }
         public bool IsElectricVehicle { get; set; }
         public int VehicleItemId { get; set; }
-        public virtual VehicleItemViewModel VehicleItem { get; set; }
+        public virtual ItemViewModel VehicleItem { get; set; }
     }
 }

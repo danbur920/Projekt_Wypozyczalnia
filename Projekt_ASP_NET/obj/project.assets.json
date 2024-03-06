@@ -3330,32 +3330,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\danbu\\.nuget\\packages\\": {},
-    "C:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Daniel\\.nuget\\packages\\": {},
+    "D:\\Visual Udostępnione\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danbu\\source\\repos\\Projekt_ASP_NET\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+      "projectUniqueName": "C:\\Users\\Daniel\\Source\\Repos\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
       "projectName": "Projekt_ASP_NET",
-      "projectPath": "C:\\Users\\danbu\\source\\repos\\Projekt_ASP_NET\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
-      "packagesPath": "C:\\Users\\danbu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danbu\\source\\repos\\Projekt_ASP_NET\\Projekt_ASP_NET\\obj\\",
+      "projectPath": "C:\\Users\\Daniel\\Source\\Repos\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Daniel\\Source\\Repos\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Visual Udostępnione\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\danbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "D:\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3406,6 +3403,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.15, 7.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3414,7 +3429,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
