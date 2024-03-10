@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ShmdFm3bHWTQ1g3+lGObnrYCJYjp0R10sTLIkqNI4caZyZiJ1eUZOC/tI1V0IvI7WYpGS+u7J3I89pWli7o9dA==",
+  "dgSpecHash": "F6wOG1bs/F2b56QOdqw8Mbais3e93epHbxDEE1ljx5xM2OYow7cTvLnfn6WHwgKnGPqjI/pnPzqGECzSvqzqdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Daniel\\Source\\Repos\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+  "projectFilePath": "C:\\Users\\Daniel\\Source\\Repos\\danbur920\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

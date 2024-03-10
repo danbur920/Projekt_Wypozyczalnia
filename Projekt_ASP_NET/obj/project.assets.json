@@ -3336,11 +3336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Daniel\\Source\\Repos\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+      "projectUniqueName": "C:\\Users\\Daniel\\Source\\Repos\\danbur920\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
       "projectName": "Projekt_ASP_NET",
-      "projectPath": "C:\\Users\\Daniel\\Source\\Repos\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+      "projectPath": "C:\\Users\\Daniel\\Source\\Repos\\danbur920\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
       "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Daniel\\Source\\Repos\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\obj\\",
+      "outputPath": "C:\\Users\\Daniel\\Source\\Repos\\danbur920\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Visual Udostępnione\\NuGetPackages"

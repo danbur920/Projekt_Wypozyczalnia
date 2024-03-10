@@ -1,0 +1,22 @@
+.table[b-6oq101msz5] {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th[b-6oq101msz5], .table td[b-6oq101msz5] {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .table th[b-6oq101msz5] {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    .table tbody tr:nth-child(even)[b-6oq101msz5] {
+        background-color: #f2f2f2;
+    }
+
+    .table tbody tr:hover[b-6oq101msz5] {
+        background-color: #ddd;
+    }

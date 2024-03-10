@@ -1,0 +1,20 @@
+﻿@model Projekt_ASP_NET.Models.Detail
+
+@{
+    ViewData["Title"] = "Szczegóły pojazdu";
+}
+
+<h1 style="text-align: center">Szczegóły pojazdu:</h1>
+<p>Id pojazdu: @ViewBag.VehicleId</p>
+
+<div class="container">
+    <ul>
+        <li>Długość: @Model.Length m</li>
+        <li>Szerokość: @Model.Width m</li>
+        <li>Waga: @Model.Weight kg</li>
+        <li>Elektryczny: @(Model.IsElectricVehicle == true ? "Tak" : "Nie")</li>
+        <li>Spalinowy: @(Model.IsCombustionVehicle == true ? "Tak" : "Nie")</li>
+        <li>Kolor: @Model.Color</li>
+    </ul>
+</div>
+

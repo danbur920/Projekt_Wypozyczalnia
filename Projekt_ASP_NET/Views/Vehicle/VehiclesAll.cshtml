@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Vehicle>
+
+@{
+    ViewData["Title"] = "Pojazdy";
+}
+
+<h1 style="text-align: center">Lista pojazdów</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nazwa</th>
+            <th>Firma</th>
+            <th>Dostępność</th>
+            <th>Ceny</th>
+            <th>Zobacz więcej</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vehicle in Model)
+        {
+            <tr>
+                <td>@vehicle.Id</td>
+                <td>@vehicle.Name</td>
+                <td>@vehicle.Brand</td>
+                <td>@(vehicle.IsAvailable == true ? "Dostępny" : "Niedostępny")</td>
+                <td>
+                    <ul>
+                        <li>Cena za dzień: @vehicle.PricePerDay zł</li>
+                        <li>Cena za miesiąc: @vehicle.PricePerMonth zł</li>
+                        <li>Cena kupna: @vehicle.PurchasePrice zł</li>
+                    </ul>
+                </td>
+                <td>
+                    <a href="/Vehicle/VehiclesOne/@vehicle.Id">Info</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

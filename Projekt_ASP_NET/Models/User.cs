@@ -1,6 +1,6 @@
 ﻿namespace Projekt_ASP_NET.Models
 {
-    public class UserViewModel
+    public class User
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
