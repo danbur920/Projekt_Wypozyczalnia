@@ -20,3 +20,38 @@
     .table tbody tr:hover[b-6oq101msz5] {
         background-color: #ddd;
     }
+
+.combobox[b-6oq101msz5] {
+    position: relative;
+    display: inline-block;
+}
+
+.select[b-6oq101msz5] {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options[b-6oq101msz5] {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    display: none;
+    width: 200px;
+}
+
+.option[b-6oq101msz5] {
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .option:hover[b-6oq101msz5] {
+        background-color: #f0f0f0;
+    }

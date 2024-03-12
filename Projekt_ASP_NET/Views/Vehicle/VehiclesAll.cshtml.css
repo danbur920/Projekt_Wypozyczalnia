@@ -20,3 +20,38 @@
     .table tbody tr:hover {
         background-color: #ddd;
     }
+
+.combobox {
+    position: relative;
+    display: inline-block;
+}
+
+.select {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    display: none;
+    width: 200px;
+}
+
+.option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .option:hover {
+        background-color: #f0f0f0;
+    }

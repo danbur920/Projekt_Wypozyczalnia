@@ -6,6 +6,15 @@
 
 <h1 style="text-align: center">Lista pojazdów</h1>
 
+<div class="combobox">
+    <div class="select" onclick="toggleOptions()">Wybierz</div>
+    <div class="options">
+        <div class="option" onclick="selectOption('Opcja 1')">Opcja 1</div>
+        <div class="option" onclick="selectOption('Opcja 2')">Opcja 2</div>
+        <div class="option" onclick="selectOption('Opcja 3')">Opcja 3</div>
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +33,9 @@
                 <td>@vehicle.Id</td>
                 <td>@vehicle.Name</td>
                 <td>@vehicle.Brand</td>
-                <td>@(vehicle.IsAvailable == true ? "Dostępny" : "Niedostępny")</td>
+                <td style="background-color: @(vehicle.IsAvailable == true ? "green" : "red")">
+                    @(vehicle.IsAvailable == true ? "Dostępny" : "Niedostępny")
+                </td>
                 <td>
                     <ul>
                         <li>Cena za dzień: @vehicle.PricePerDay zł</li>
