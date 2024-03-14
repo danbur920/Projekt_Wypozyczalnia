@@ -1,5 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Policy";
-    @await Html.PartialAsync("_PrivacyPolicy");
-    @await Html.PartialAsync("_CookiePolicy");
+    @Html.Partial("_PrivacyPolicy");
+    @Html.Partial("_CookiePolicy");
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Projekt_ASP_NET.Models;
 
 namespace Projekt_ASP_NET.Controllers
@@ -102,6 +103,21 @@ namespace Projekt_ASP_NET.Controllers
 
             var result = detailList.Where(x => x.VehicleId == id).FirstOrDefault();
             return View(result);
+        }
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(Vehicle body)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(body);
+            }
+
+            return RedirectToAction("Add", FormMethod.Get);
         }
     }
 }

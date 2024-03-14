@@ -1,0 +1,33 @@
+﻿@model Projekt_ASP_NET.Models.Vehicle
+
+@using (Html.BeginForm("Add", "Vehicle", FormMethod.Post))
+{
+    @Html.ValidationSummary();
+
+    <span>Nazwa pojazdu: </span>
+    @Html.TextBoxFor(x => x.Name)
+    <br />
+
+    <span>Cena za godz: </span>
+    @Html.TextBoxFor(x => x.PricePerHour)
+    <br />
+
+    <span>Cena za dzień: </span> 
+    @Html.TextBoxFor(x => x.PricePerDay)
+    <br />
+
+    <span>Cena za miesiąc: </span> 
+    @Html.TextBoxFor(x => x.PricePerMonth)
+    <br />
+
+    <span>Cena kupna: </span> 
+    @Html.TextBoxFor(x => x.PurchasePrice)
+    <br />
+
+    <span>Marka: </span> 
+    @Html.TextBoxFor(x => x.Brand)
+    <br />
+
+    <button type="submit">Dodaj</button>
+}
+
