@@ -338,10 +338,7 @@ C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Projekt_ASP_NET.props
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.Projekt_ASP_NET.props
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\staticwebassets.pack.json
-C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\Views\Shared\_CookiePolicy.cshtml.rz.scp.css
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\Views\Shared\_PrivacyPolicy.cshtml.rz.scp.css
-C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\Views\Vehicle\VehiclesAll.cshtml.rz.scp.css
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\bundle\Projekt_ASP_NET.styles.css
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\projectbundle\Projekt_ASP_NET.bundle.scp.css
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\Projekt_ASP_NET.csproj.CopyComplete
@@ -528,3 +525,6 @@ C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\Views\Shared\Policy\_CookiePolicy.cshtml.rz.scp.css
+C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\Views\Shared\Policy\_PrivacyPolicy.cshtml.rz.scp.css
+C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\scopedcss\Views\Vehicle\All.cshtml.rz.scp.css

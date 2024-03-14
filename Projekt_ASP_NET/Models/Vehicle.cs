@@ -11,14 +11,20 @@ namespace Projekt_ASP_NET.Models
 
         public string Brand { get; set; }
         public string? Image { get; set; }
-        public bool? IsAvailable { get; set; }
+        public bool IsAvailable { get; set; }
         public float? PricePerHour { get; set; }
         public float? PricePerDay { get; set; }
         public float? PricePerMonth { get; set; } 
         public float? PurchasePrice { get; set; }
-        public int? DetailId { get; set; }
+        // Details:
+        public float? Length { get; set; }
+        public float? Width { get; set; }
+        public float? Weight { get; set; }
+        public string? Color { get; set; }
+        public float? Horsepower { get; set; }
+        public bool IsCombustionVehicle { get; set; }
+        public bool IsElectricVehicle { get; set; }
         public int? BranchId { get; set; }
-        public virtual Detail? Detail { get; set; }
         public virtual Branch? Branch { get; set; }
         public virtual List<Hire>? Hires { get; set; }
     }

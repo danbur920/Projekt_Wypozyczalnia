@@ -1,22 +1,43 @@
-/* _content/Projekt_ASP_NET/Views/Shared/_CookiePolicy.cshtml.rz.scp.css */
-div[b-zxjxv1wrn3] {
+/* _content/Projekt_ASP_NET/Views/Shared/Policy/_CookiePolicy.cshtml.rz.scp.css */
+div[b-u7qubiezfk] {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-.container[b-zxjxv1wrn3] {
+.container[b-u7qubiezfk] {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
 
-h2[b-zxjxv1wrn3] {
+h2[b-u7qubiezfk] {
     margin-top: 20px;
 }
 
-p[b-zxjxv1wrn3] {
+p[b-u7qubiezfk] {
+    margin-bottom: 20px;
+}
+/* _content/Projekt_ASP_NET/Views/Shared/Policy/_PrivacyPolicy.cshtml.rz.scp.css */
+div[b-njjn4wowyf] {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container[b-njjn4wowyf] {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2[b-njjn4wowyf] {
+    margin-top: 20px;
+}
+
+p[b-njjn4wowyf] {
     margin-bottom: 20px;
 }
 /* _content/Projekt_ASP_NET/Views/Shared/_Layout.cshtml.rz.scp.css */
@@ -68,57 +89,36 @@ button.accept-policy[b-4bn5apuhzq] {
   white-space: nowrap;
   line-height: 60px;
 }
-/* _content/Projekt_ASP_NET/Views/Shared/_PrivacyPolicy.cshtml.rz.scp.css */
-div[b-2evomm899w] {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-.container[b-2evomm899w] {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h2[b-2evomm899w] {
-    margin-top: 20px;
-}
-
-p[b-2evomm899w] {
-    margin-bottom: 20px;
-}
-/* _content/Projekt_ASP_NET/Views/Vehicle/VehiclesAll.cshtml.rz.scp.css */
-.table[b-6oq101msz5] {
+/* _content/Projekt_ASP_NET/Views/Vehicle/All.cshtml.rz.scp.css */
+.table[b-l4qhi9cg4u] {
     width: 100%;
     border-collapse: collapse;
 }
 
-    .table th[b-6oq101msz5], .table td[b-6oq101msz5] {
+    .table th[b-l4qhi9cg4u], .table td[b-l4qhi9cg4u] {
         padding: 8px;
         border: 1px solid #ddd;
     }
 
-    .table th[b-6oq101msz5] {
+    .table th[b-l4qhi9cg4u] {
         background-color: #f2f2f2;
         text-align: left;
     }
 
-    .table tbody tr:nth-child(even)[b-6oq101msz5] {
+    .table tbody tr:nth-child(even)[b-l4qhi9cg4u] {
         background-color: #f2f2f2;
     }
 
-    .table tbody tr:hover[b-6oq101msz5] {
+    .table tbody tr:hover[b-l4qhi9cg4u] {
         background-color: #ddd;
     }
 
-.combobox[b-6oq101msz5] {
+.combobox[b-l4qhi9cg4u] {
     position: relative;
     display: inline-block;
 }
 
-.select[b-6oq101msz5] {
+.select[b-l4qhi9cg4u] {
     display: block;
     width: 200px;
     padding: 10px;
@@ -127,7 +127,7 @@ p[b-2evomm899w] {
     cursor: pointer;
 }
 
-.options[b-6oq101msz5] {
+.options[b-l4qhi9cg4u] {
     position: absolute;
     top: 100%;
     left: 0;
@@ -139,11 +139,11 @@ p[b-2evomm899w] {
     width: 200px;
 }
 
-.option[b-6oq101msz5] {
+.option[b-l4qhi9cg4u] {
     padding: 10px;
     cursor: pointer;
 }
 
-    .option:hover[b-6oq101msz5] {
+    .option:hover[b-l4qhi9cg4u] {
         background-color: #f0f0f0;
     }

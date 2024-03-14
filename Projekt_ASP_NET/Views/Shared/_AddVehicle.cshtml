@@ -1,5 +1,29 @@
 ﻿@model Projekt_ASP_NET.Models.Vehicle
 
+@{
+    List<Branch> _branches = new List<Branch>
+    {
+        new Branch
+        {
+            Id = 1,
+            Locality = "Bielsko-Biała",
+            NumberOfVehicles = 0
+        },
+        new Branch
+        {
+            Id = 2,
+            Locality = "Warszawa",
+            NumberOfVehicles = 0
+        },
+        new Branch
+        {
+            Id = 3,
+            Locality = "Cieszyn",
+            NumberOfVehicles = 0
+        }
+    };
+}
+
 @using (Html.BeginForm("Add", "Vehicle", FormMethod.Post))
 {
     @Html.ValidationSummary();
@@ -8,19 +32,19 @@
     @Html.TextBoxFor(x => x.Name)
     <br />
 
-    <span>Cena za godz: </span>
+    <span>Cena za godz [zł]: </span>
     @Html.TextBoxFor(x => x.PricePerHour)
     <br />
 
-    <span>Cena za dzień: </span> 
+    <span>Cena za dzień [zł]: </span>
     @Html.TextBoxFor(x => x.PricePerDay)
     <br />
 
-    <span>Cena za miesiąc: </span> 
+    <span>Cena za miesiąc [zł]: </span>
     @Html.TextBoxFor(x => x.PricePerMonth)
     <br />
 
-    <span>Cena kupna: </span> 
+    <span>Cena kupna [zł]: </span>
     @Html.TextBoxFor(x => x.PurchasePrice)
     <br />
 
@@ -28,6 +52,40 @@
     @Html.TextBoxFor(x => x.Brand)
     <br />
 
+    <span>Długość [m]: </span>
+    @Html.TextBoxFor(x => x.Length)
+    <br />
+
+    <span>Szerokość [m]: </span>
+    @Html.TextBoxFor(x => x.Width)
+    <br />
+
+    <span>Waga [kg]: </span>
+    @Html.TextBoxFor(x => x.Weight)
+    <br />
+
+    <span>Kolor: </span>
+    @Html.TextBoxFor(x => x.Color)
+    <br />
+
+    <span>Konie mechaniczne [km]: </span>
+    @Html.TextBoxFor(x => x.Horsepower)
+    <br />
+
+    <span>Dostępność: </span>
+    @Html.CheckBoxFor(x => x.IsAvailable)
+    <br />
+
+    <span>Czy to pojazd elektryczny: </span>
+    @Html.CheckBoxFor(x => x.IsElectricVehicle)
+    <br />
+
+    <span>Czy to pojazd spalinowy: </span>
+    @Html.CheckBoxFor(x => x.IsCombustionVehicle)
+    <br />
+
+    @Html.DropDownListFor(x => x.BranchId, new SelectList(_branches, "Id", "Locality"), "Wybierz oddział", new { @class = "form-control" })
+    <br />
     <button type="submit">Dodaj</button>
 }
 
