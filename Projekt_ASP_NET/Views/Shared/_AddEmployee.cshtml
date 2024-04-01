@@ -1,0 +1,24 @@
+﻿@model Projekt_ASP_NET.Models.Employee
+
+@using (Html.BeginForm("Add", "Employee", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    <span>Imie: </span>
+    @Html.TextBoxFor(x => x.FirstName)
+    <br />
+
+    <span>Nazwisko: </span>
+    @Html.TextBoxFor(x => x.LastName)
+    <br />
+
+    <span>Rola [pracownik/admin]: </span>
+    @Html.TextBoxFor(x => x.Role)
+    <br />
+
+    <span>Email: </span>
+    @Html.TextBoxFor(x => x.Email)
+    <br />
+
+    <button type="submit" asp-area="" asp-action="Add" asp-controller="Employee">Dodaj</button>
+}

@@ -9,71 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Projekt_ASP_NET
 build_property.RootNamespace = Projekt_ASP_NET
-build_property.ProjectDir = C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\danbu\Desktop\ASP_NET_MVC_Projekt\Projekt_Wypozyczalnia\Projekt_ASP_NET\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Daniel\source\repos\Projekt_Wypozyczalnia\Projekt_ASP_NET
+build_property.MSBuildProjectDirectory = C:\Users\danbu\Desktop\ASP_NET_MVC_Projekt\Projekt_Wypozyczalnia\Projekt_ASP_NET
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Home/Index.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Employee/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Home/Privacy.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/Error.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_AddVehicle.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_AddVehicle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZGRWZWhpY2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/Add.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/One.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/One.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxPbmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/_ViewImports.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/_ViewStart.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/Policy/_CookiePolicy.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/Policy/_CookiePolicy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvbGljeVxfQ29va2llUG9saWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-u7qubiezfk
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/Policy/_PrivacyPolicy.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/Policy/_PrivacyPolicy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBvbGljeVxfUHJpdmFjeVBvbGljeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-njjn4wowyf
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_Layout.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-4bn5apuhzq
 
-[C:/Users/Daniel/source/repos/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/All.cshtml]
+[C:/Users/danbu/Desktop/ASP_NET_MVC_Projekt/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxBbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-l4qhi9cg4u

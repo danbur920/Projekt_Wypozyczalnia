@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Projekt_ASP_NET.Data;
+using Projekt_ASP_NET.Models;
 
 namespace Projekt_ASP_NET
 {
@@ -19,6 +20,8 @@ namespace Projekt_ASP_NET
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<RentalSystemDbContext>(options =>
+            options.UseInMemoryDatabase(databaseName: "RentalSystem"));
 
             var app = builder.Build();
 

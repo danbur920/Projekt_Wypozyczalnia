@@ -10,6 +10,8 @@ namespace Projekt_ASP_NET.Models
         [Required(ErrorMessage = "Marka pojazdu jest wymagana.")]
 
         public string Brand { get; set; }
+        [Required(ErrorMessage = "Typ pojazdu jest wymagany.")]
+        public string? Type { get; set; }
         public string? Image { get; set; }
         public bool IsAvailable { get; set; }
         public float? PricePerHour { get; set; }

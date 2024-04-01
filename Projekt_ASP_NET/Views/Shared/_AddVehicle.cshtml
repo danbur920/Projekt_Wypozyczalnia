@@ -32,6 +32,10 @@
     @Html.TextBoxFor(x => x.Name)
     <br />
 
+    <span>Typ pojazdu: </span>
+    @Html.TextBoxFor(x => x.Type)
+    <br />
+
     <span>Cena za godz [zł]: </span>
     @Html.TextBoxFor(x => x.PricePerHour)
     <br />
@@ -86,6 +90,6 @@
 
     @Html.DropDownListFor(x => x.BranchId, new SelectList(_branches, "Id", "Locality"), "Wybierz oddział", new { @class = "form-control" })
     <br />
-    <button type="submit">Dodaj</button>
+    <button type="submit" asp-area="" asp-action="Add" asp-controller="Vehicle">Dodaj</button>
 }
 

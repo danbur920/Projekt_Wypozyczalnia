@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Projekt_ASP_NET.Models;
 
 namespace Projekt_ASP_NET.Controllers
@@ -89,9 +90,10 @@ namespace Projekt_ASP_NET.Controllers
         {
             if (!ModelState.IsValid)
             {
+                Console.WriteLine(body.Id + body.Color + body.Name);
+                // logika dodania do bazy ...
                 return View(body);
             }
-
             return RedirectToAction("Add", FormMethod.Get);
         }
     }
