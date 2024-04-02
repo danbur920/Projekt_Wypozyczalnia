@@ -7,6 +7,6 @@
         public string? LastName { get; set; }
         public string? Email { get; set; }
         public string? Role { get; set; } // worker, admin
-        public virtual List<Hire>? Hires { get; set; }
+        public virtual List<Rental>? Hires { get; set; }
     }
 }

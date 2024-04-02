@@ -2,11 +2,17 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Projekt_ASP_NET.Models;
+using Projekt_ASP_NET.Services;
 
 namespace Projekt_ASP_NET.Controllers
 {
     public class VehicleController : Controller
     {
+        private readonly VehicleService _vehicleService;
+        public VehicleController(VehicleService vehicleService)
+        {
+                _vehicleService = vehicleService;
+        }
         List<Vehicle> _vehicles = new List<Vehicle>()
         {
                 new Vehicle
@@ -72,6 +78,7 @@ namespace Projekt_ASP_NET.Controllers
         };
         public IActionResult All()
         {
+         
             return View(_vehicles);
         }
         public IActionResult One(int id)

@@ -5,43 +5,47 @@ using Projekt_ASP_NET.Repository.Interfaces;
 
 namespace Projekt_ASP_NET.Repository
 {
-    public class VehicleRepository : IVehicleRepository
+    public class VehicleRepository : IRepository<Vehicle>
     {
-        private readonly RentalSystemDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public VehicleRepository(RentalSystemDbContext context)
+        public VehicleRepository(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public void AddVehicle(Vehicle vehicle)
+        public async Task<Vehicle> GetById(int id)
         {
-            _context.Add(vehicle);
-            _context.SaveChanges();
+            return await _context.Vehicles.FindAsync(id);
         }
 
-        public void DeleteVehicle(int id)
+        public async Task<IEnumerable<Vehicle>> GetAll()
         {
-            var vehicleToDelete = _context.Vehicles.Where(x=>x.Id==id).FirstOrDefault();
-            _context.Remove(vehicleToDelete);
-            _context.SaveChanges();
+            return await _context.Vehicles.ToListAsync();
         }
 
-        public IEnumerable<Vehicle> GetAllVehicles()
+
+        public async Task Add(Vehicle vehicle)
         {
-            return _context.Vehicles.ToList();
+            _context.Vehicles.Add(vehicle);
+            await _context.SaveChangesAsync();
         }
 
-        public Vehicle GetVehicleById(int id)
-        {
-            return _context.Vehicles.Find(id);
-        }
-
-        public void UpdateVehicle(Vehicle vehicle)
+        public async Task Update(Vehicle vehicle)
         {
             _context.Entry(vehicle).State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
+        public async Task Delete(int id)
+        {
+            var vehicleToDelete = await _context.Vehicles.FindAsync(id);
+
+            if(vehicleToDelete != null)
+            {
+                _context.Vehicles.Remove(vehicleToDelete);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Branch>
+
+@{
+    ViewData["Title"] = "Punkty wypożyczeń";
+}
+
+<h1 style="text-align: center">Punkty wypożyczeń</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Miejscowość</th>
+            <th>Ilość pojazdów</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model)
+        {
+            <tr>
+                <td>@branch.Id</td>
+                <td>@branch.Locality</td>
+                <td>@branch.NumberOfVehicles</td>
+            </tr>
+        }
+    </tbody>
+</table>

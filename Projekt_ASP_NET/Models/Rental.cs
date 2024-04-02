@@ -1,6 +1,6 @@
 ﻿namespace Projekt_ASP_NET.Models
 {
-    public class Hire
+    public class Rental
     {
         public int Id { get; set; }
         public int UserId { get; set; }
