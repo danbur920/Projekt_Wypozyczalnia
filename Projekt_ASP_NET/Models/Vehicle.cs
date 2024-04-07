@@ -28,6 +28,7 @@ namespace Projekt_ASP_NET.Models
         public bool IsElectricVehicle { get; set; }
         public int? BranchId { get; set; }
         public virtual Branch? Branch { get; set; }
-        public virtual List<Rental>? Hires { get; set; }
+        public virtual List<Rental>? Rentals { get; set; }
+        public virtual List<Reservation>? Reservations { get; set; }
     }
 }

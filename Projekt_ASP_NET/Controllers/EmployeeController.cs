@@ -17,7 +17,7 @@ namespace Projekt_ASP_NET.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(Employee body)
+        public IActionResult Add(User body)
         {
             if (!ModelState.IsValid)
             {

@@ -6,15 +6,6 @@
 
 <h1 style="text-align: center">Lista pojazdów</h1>
 
-<div class="combobox">
-    <div class="select" onclick="toggleOptions()">Wybierz</div>
-    <div class="options">
-        <div class="option" onclick="selectOption('Opcja 1')">Opcja 1</div>
-        <div class="option" onclick="selectOption('Opcja 2')">Opcja 2</div>
-        <div class="option" onclick="selectOption('Opcja 3')">Opcja 3</div>
-    </div>
-</div>
-
 <table class="table">
     <thead>
         <tr>
@@ -23,7 +14,7 @@
             <th>Firma</th>
             <th>Dostępność</th>
             <th>Ceny</th>
-            <th>Zobacz więcej</th>
+            <th>Zarządzaj</th>
         </tr>
     </thead>
     <tbody>
@@ -45,6 +36,8 @@
                 </td>
                 <td>
                     <a href="/Vehicle/One/@vehicle.Id">Info</a>
+                    <a asp-area="" asp-controller="Vehicle" asp-action="Delete" asp-route-id="@vehicle.Id">Usuń</a>
+                    <a asp-area="" asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.Id">Edytuj</a>
                 </td>
             </tr>
         }

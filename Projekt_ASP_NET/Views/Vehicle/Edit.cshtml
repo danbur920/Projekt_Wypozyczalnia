@@ -1,11 +1,11 @@
 ﻿@model Projekt_ASP_NET.ViewModels.VehicleViewModel
 
-<h1>Dodaj pojazd do bazy</h1>
-
-@using (Html.BeginForm("Add", "Vehicle", FormMethod.Post))
+@using (Html.BeginForm("Edit", "Vehicle", FormMethod.Post))
 {
     @Html.ValidationSummary()
     ;
+
+    @Html.HiddenFor(x => x.Vehicle.Id)
 
     <span>Nazwa pojazdu: </span>
     @Html.TextBoxFor(x => x.Vehicle.Name)
@@ -67,7 +67,7 @@
     @Html.CheckBoxFor(x => x.Vehicle.IsCombustionVehicle)
     <br />
 
-    @Html.DropDownListFor(x => x.Vehicle.BranchId, new SelectList(Model.Branches, "Value", "Text"), "Wybierz oddział", new { @class = "form-control" })
+    @Html.DropDownListFor(x => x.Vehicle.BranchId, Model.Branches, "Wybierz oddział", new { @class = "form-control" })
     <br />
-    <button type="submit" class="btn btn-primary" asp-area="" asp-action="Add" asp-controller="Vehicle">Dodaj</button>
+    <button type="submit" asp-area="" asp-action="Edit" asp-controller="Vehicle">Zapisz zmiany</button>
 }

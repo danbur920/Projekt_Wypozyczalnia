@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projekt_ASP_NET.Data;
 
@@ -11,9 +12,11 @@ using Projekt_ASP_NET.Data;
 namespace Projekt_ASP_NET.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240407145004_migration1")]
+    partial class migration1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -246,15 +249,12 @@ namespace Projekt_ASP_NET.Data.Migrations
                     b.Property<int?>("NumberOfVehicles")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Branches");
                 });
@@ -279,10 +279,7 @@ namespace Projekt_ASP_NET.Data.Migrations
                     b.Property<DateTime?>("StartOfRental")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("VehicleId")
@@ -294,7 +291,7 @@ namespace Projekt_ASP_NET.Data.Migrations
                         .IsUnique()
                         .HasFilter("[ReservationId] IS NOT NULL");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.HasIndex("VehicleId");
 
@@ -315,10 +312,7 @@ namespace Projekt_ASP_NET.Data.Migrations
                     b.Property<DateTime?>("StartOfRental")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("VehicleId")
@@ -326,7 +320,7 @@ namespace Projekt_ASP_NET.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.HasIndex("VehicleId");
 
@@ -470,7 +464,7 @@ namespace Projekt_ASP_NET.Data.Migrations
                 {
                     b.HasOne("Projekt_ASP_NET.Models.User", "User")
                         .WithMany("Branches")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -483,7 +477,7 @@ namespace Projekt_ASP_NET.Data.Migrations
 
                     b.HasOne("Projekt_ASP_NET.Models.User", "User")
                         .WithMany("Rentals")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.HasOne("Projekt_ASP_NET.Models.Vehicle", "Vehicle")
                         .WithMany("Rentals")
@@ -500,7 +494,7 @@ namespace Projekt_ASP_NET.Data.Migrations
                 {
                     b.HasOne("Projekt_ASP_NET.Models.User", "User")
                         .WithMany("Reservations")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.HasOne("Projekt_ASP_NET.Models.Vehicle", "Vehicle")
                         .WithMany("Reservations")

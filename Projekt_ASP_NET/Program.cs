@@ -17,20 +17,35 @@ namespace Projekt_ASP_NET
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            //builder.Services.AddIdentity<User, IdentityRole>(
+            //    options=>
+            //    {
+            //        options.Password.RequiredUniqueChars = 0;
+            //        options.Password.RequireUppercase = false;
+            //        options.Password.RequiredLength = 5;
+            //        options.Password.RequireNonAlphanumeric = false;
+            //        options.Password.RequireLowercase = false;
+            //    })
+            //    .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
+            builder.Services.AddScoped<IRepository<Branch>, BranchRepository>();
+            builder.Services.AddScoped<IRepository<Vehicle>, VehicleRepository>();
+
             builder.Services.AddScoped<IVehicleService, VehicleService>();
-            builder.Services.AddScoped<IBranchRepository, BranchRepository>();
+            builder.Services.AddScoped<IBranchService, BranchService>();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-
+            builder.Services.AddRazorPages();
             builder.Services.AddControllersWithViews();
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseInMemoryDatabase(databaseName: "RentalSystem"));
 

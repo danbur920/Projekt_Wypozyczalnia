@@ -1,0 +1,10 @@
+﻿@model Projekt_ASP_NET.Models.Vehicle
+
+<h1>Potwierdź usunięcie pojazdu</h1>
+
+<p>Czy na pewno chcesz usunąć pojazd o nazwie: @Model.Name?</p>
+
+<form method="post">
+    <input type="submit" value="Usuń" />
+    <a asp-action="All" asp-controller="Vehicle">Anuluj</a>
+</form>

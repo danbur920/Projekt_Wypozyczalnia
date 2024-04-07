@@ -26,10 +26,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = T3RoZXJcX0FkZEVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Daniel/Desktop/ASP_MVC/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Branch/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEFkZC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Daniel/Desktop/ASP_MVC/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Branch/All.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmNoXEFsbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -64,14 +60,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Daniel/Desktop/ASP_MVC/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxBZGQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Daniel/Desktop/ASP_MVC/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Daniel/Desktop/ASP_MVC/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Daniel/Desktop/ASP_MVC/Projekt_Wypozyczalnia/Projekt_ASP_NET/Views/Vehicle/One.cshtml]

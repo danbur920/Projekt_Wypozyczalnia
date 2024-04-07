@@ -12,6 +12,7 @@
             <th>Id</th>
             <th>Miejscowość</th>
             <th>Ilość pojazdów</th>
+            <th>Działania</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,10 @@
                 <td>@branch.Id</td>
                 <td>@branch.Locality</td>
                 <td>@branch.NumberOfVehicles</td>
+                <td>
+                    <a asp-area="" asp-controller="Branch" asp-action="Delete" asp-route-id="@branch.Id">Usuń</a>
+                    <a asp-area="" asp-controller="Branch" asp-action="Update" asp-route-id="@branch.Id">Edytuj</a>
+                </td>
             </tr>
         }
     </tbody>
