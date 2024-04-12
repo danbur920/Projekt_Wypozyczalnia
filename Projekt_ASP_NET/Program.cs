@@ -21,17 +21,6 @@ namespace Projekt_ASP_NET
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            //builder.Services.AddIdentity<User, IdentityRole>(
-            //    options=>
-            //    {
-            //        options.Password.RequiredUniqueChars = 0;
-            //        options.Password.RequireUppercase = false;
-            //        options.Password.RequiredLength = 5;
-            //        options.Password.RequireNonAlphanumeric = false;
-            //        options.Password.RequireLowercase = false;
-            //    })
-            //    .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddScoped<IRepository<Branch>, BranchRepository>();
@@ -40,14 +29,37 @@ namespace Projekt_ASP_NET
             builder.Services.AddScoped<IVehicleService, VehicleService>();
             builder.Services.AddScoped<IBranchService, BranchService>();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+            })
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+
             builder.Services.AddRazorPages();
             builder.Services.AddControllersWithViews();
 
+            // Seedowanie danych roli
+            using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+            {
+                var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                string[] roleNames = { "admin", "pracownik", "klient", "goœæ" };
+
+                foreach (var roleName in roleNames)
+                {
+                    var roleExists = await roleManager.RoleExistsAsync(roleName);
+                    if (!roleExists)
+                    {
+                        await roleManager.CreateAsync(new IdentityRole(roleName));
+                    }
+                }
+            }
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseInMemoryDatabase(databaseName: "RentalSystem"));
+                options.UseInMemoryDatabase(databaseName: "RentalSystem"));
 
             var app = builder.Build();
 
@@ -68,14 +80,13 @@ namespace Projekt_ASP_NET
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
-
-      
 
             app.Run();
         }

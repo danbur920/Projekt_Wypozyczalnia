@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Projekt_ASP_NET.Models;
@@ -92,7 +93,7 @@ namespace Projekt_ASP_NET.Controllers
             //var result = _vehicles.Find(x => x.Id == id);
             return View(await _vehicleService.GetById(id));
         }
-
+        [Authorize(Roles = "pracownik")]
         public async Task<IActionResult> Add()
         {
             var branches = await _branchService.GetAll();
@@ -103,7 +104,7 @@ namespace Projekt_ASP_NET.Controllers
             };
             return View(viewModel);
         }
-
+        [Authorize(Roles ="pracownik")]
         [HttpPost]
         public async Task<IActionResult> Add(VehicleViewModel viewModel)
         {
