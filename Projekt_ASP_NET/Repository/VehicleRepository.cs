@@ -33,7 +33,27 @@ namespace Projekt_ASP_NET.Repository
 
         public async Task Update(Vehicle vehicle)
         {
-            _context.Entry(vehicle).State = EntityState.Modified;
+            //_context.Entry(vehicle).State = EntityState.Modified;
+            //await _context.SaveChangesAsync();
+
+            var existingVehicle = await _context.Vehicles.FindAsync(vehicle.Id);
+
+            // Logika do uaktualniania ilości pojazdów w danym oddziale:
+            if (existingVehicle.BranchId != vehicle.BranchId)
+            {
+                var oldBranch = await _context.Branches.FindAsync(existingVehicle.BranchId);
+                if (oldBranch != null)
+                {
+                    oldBranch.NumberOfVehicles--;
+                }
+
+                var newBranch = await _context.Branches.FindAsync(vehicle.BranchId);
+                if (newBranch != null)
+                {
+                    newBranch.NumberOfVehicles++;
+                }
+            }
+            _context.Entry(existingVehicle).CurrentValues.SetValues(vehicle);
             await _context.SaveChangesAsync();
         }
 

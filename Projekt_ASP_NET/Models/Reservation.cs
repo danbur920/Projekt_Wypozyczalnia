@@ -6,7 +6,7 @@
         public DateTime? StartOfRental { get; set; }
         public DateTime? EndOfRental { get; set; }
         public int? VehicleId { get; set; }
-        public int? UserId { get; set; }
+        public string? UserId { get; set; }
         public virtual Vehicle? Vehicle { get; set; }
         public virtual Rental? Rental { get; set; }
         public virtual User? User { get; set; }

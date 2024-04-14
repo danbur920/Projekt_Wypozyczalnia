@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vehicle>
+﻿@model Projekt_ASP_NET.ViewModels.VehicleShowViewModel
 
 @{
     ViewData["Title"] = "Pojazdy";
@@ -13,12 +13,13 @@
             <th>Nazwa</th>
             <th>Firma</th>
             <th>Dostępność</th>
+            <th>Oddział</th>
             <th>Ceny</th>
             <th>Zarządzaj</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var vehicle in Model)
+        @foreach (var vehicle in Model.Vehicles)
         {
             <tr>
                 <td>@vehicle.Id</td>
@@ -26,6 +27,12 @@
                 <td>@vehicle.Brand</td>
                 <td style="background-color: @(vehicle.IsAvailable == true ? "green" : "red")">
                     @(vehicle.IsAvailable == true ? "Dostępny" : "Niedostępny")
+                </td>
+                <td>
+                    @{
+                        var vehicleBranch = Model.Branches.FirstOrDefault(x => x.Id == vehicle.BranchId);
+                    }
+                    @vehicleBranch.Locality
                 </td>
                 <td>
                     <ul>

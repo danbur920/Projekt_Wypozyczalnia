@@ -57,9 +57,17 @@ namespace Projekt_ASP_NET
                     }
                 }
             }
-
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseInMemoryDatabase(databaseName: "RentalSystem"));
+
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOrEmployee", policy =>
+                    policy.RequireRole("admin", "pracownik"));
+
+                options.AddPolicy("EmployeeOrCustomer", policy =>
+                    policy.RequireRole("pracownik", "klient"));
+            });
 
             var app = builder.Build();
 
@@ -71,7 +79,7 @@ namespace Projekt_ASP_NET
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseStatusCodePagesWithRedirects("/Home/AccessDenied"); 
                 app.UseHsts();
             }
 

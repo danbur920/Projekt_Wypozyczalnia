@@ -58,7 +58,7 @@ namespace Projekt_ASP_NET.Controllers
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, "klient");
+                await _userManager.AddToRoleAsync(user, "admin");
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -75,6 +75,10 @@ namespace Projekt_ASP_NET.Controllers
         {
             await _singInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }
