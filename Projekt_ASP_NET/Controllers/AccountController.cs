@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Projekt_ASP_NET.Models;
+using Projekt_ASP_NET.ViewModels;
 
 namespace Projekt_ASP_NET.Controllers
 {
@@ -8,11 +10,13 @@ namespace Projekt_ASP_NET.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _singInManager;
+        private readonly IMapper _mapper;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> singInManager)
+        public AccountController(UserManager<User> userManager, SignInManager<User> singInManager, IMapper mapper)
         {
             _userManager = userManager;
             _singInManager = singInManager;
+            _mapper = mapper;
         }
 
         [HttpGet] 
@@ -22,7 +26,7 @@ namespace Projekt_ASP_NET.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(Login userLogin)
+        public async Task<IActionResult> Login(LoginViewModel userLogin)
         {
             if (!ModelState.IsValid)
             {
@@ -41,24 +45,26 @@ namespace Projekt_ASP_NET.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(Register userRegister)
+        public async Task<IActionResult> Register(RegisterViewModel userRegister)
         {
             if (!ModelState.IsValid)
             {
                 return View(userRegister);
             }
 
-            var user = new User
-            {
-                Email = userRegister.Email,
-                UserName = userRegister.UserName,
-            };
+            //var user = new User
+            //{
+            //    Email = userRegister.Email,
+            //    UserName = userRegister.UserName,
+            //};
+
+            var user = _mapper.Map<User>(userRegister);
 
             var result = await _userManager.CreateAsync(user, userRegister.Password);
 
             if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, "admin");
+                await _userManager.AddToRoleAsync(user, "klient");
                 return RedirectToAction("Index", "Home");
             }
             else

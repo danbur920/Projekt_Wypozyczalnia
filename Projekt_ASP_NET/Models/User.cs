@@ -8,6 +8,7 @@ namespace Projekt_ASP_NET.Models
         public string? LastName { get; set; }
         public virtual List<Rental>? Rentals { get; set; }
         public virtual List<Reservation>? Reservations { get; set; }
-        public virtual List<Branch>? Branches { get; set; } // pole nie jest null, gdy dany użytkownik zarządza danym oddziałem
+        public virtual List<Branch>? Branches { get; set; } // pole nie jest null,
+                                                            // gdy dany użytkownik zarządza danym oddziałem
     }
 }

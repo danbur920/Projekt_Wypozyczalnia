@@ -7,6 +7,11 @@ using Projekt_ASP_NET.Repository;
 using System.Threading.Tasks;
 using Projekt_ASP_NET.Services.Interfaces;
 using Projekt_ASP_NET.Services;
+using Projekt_ASP_NET.Mappings;
+using Projekt_ASP_NET.Validations;
+using Microsoft.Extensions.DependencyInjection;
+using FluentValidation.AspNetCore;
+using FluentValidation;
 
 namespace Projekt_ASP_NET
 {
@@ -29,6 +34,8 @@ namespace Projekt_ASP_NET
             builder.Services.AddScoped<IVehicleService, VehicleService>();
             builder.Services.AddScoped<IBranchService, BranchService>();
 
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
+
             builder.Services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -40,7 +47,15 @@ namespace Projekt_ASP_NET
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddRazorPages();
-            builder.Services.AddControllersWithViews();
+
+            builder.Services.AddControllersWithViews().AddFluentValidation();
+
+            builder.Services.AddValidatorsFromAssemblyContaining<ReservationValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<RentalValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<UserValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<BranchValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<VehicleValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<RegisterValidator>();
 
             // Seedowanie danych roli
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())

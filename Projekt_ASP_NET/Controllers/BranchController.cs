@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -15,12 +16,15 @@ namespace Projekt_ASP_NET.Controllers
     {
         private readonly IBranchService _branchService;
         private readonly UserManager<User> _userManager;
+        private readonly IMapper _mapper;
 
-        public BranchController(IBranchService branchService, UserManager<User> userManager)
+        public BranchController(IBranchService branchService, UserManager<User> userManager, IMapper mapper)
         {
             _branchService = branchService;
             _userManager = userManager;
+            _mapper = mapper;
         }
+
 
         [Authorize(Roles = "admin")]
         [HttpGet]
@@ -29,49 +33,46 @@ namespace Projekt_ASP_NET.Controllers
             var usersWithRoles = await _userManager.GetUsersInRoleAsync("pracownik");
             usersWithRoles.AddRange(await _userManager.GetUsersInRoleAsync("admin"));
 
-            var viewModel = new BranchViewModel
+            var branchViewModel = new BranchViewModel
             {
                 Branch = new Branch(),
-                Users = usersWithRoles.Select(u => new SelectListItem { Value = u.Id, Text = u.Email }).ToList()
+                //Users = usersWithRoles.Select(u => new SelectListItem { Value = u.Id, Text = u.Email }).ToList()
+                Users = _mapper.Map<List<SelectListItem>>(usersWithRoles)
             };
 
-            return View(viewModel);
+            return View(branchViewModel);
         }
 
         [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<IActionResult> Add(Branch branch)
+        public async Task<IActionResult> Add(BranchViewModel branchViewModel)
         {
-            var usersWithRoles = await _userManager.GetUsersInRoleAsync("pracownik");
-            usersWithRoles.AddRange(await _userManager.GetUsersInRoleAsync("admin"));
-
             if (ModelState.IsValid)
             {
-                if(!string.IsNullOrEmpty(branch.UserId))
+                var branch = _mapper.Map<Branch>(branchViewModel.Branch);
+
+                var selectedUser = await _userManager.FindByIdAsync(branchViewModel.Branch.UserId);
+                if (selectedUser != null)
                 {
-                    var selectedUser = usersWithRoles.FirstOrDefault(u => u.Id == branch.UserId);
-                    if(selectedUser != null)
-                    {
-                        branch.User = selectedUser;
-                        branch.UserId = selectedUser.Id;
-                    }
-                    else
-                    {
-                        ModelState.AddModelError(string.Empty, "Wybrany użytkownik jest nieprawidłowy.");
-                        return View(branch);
-                    }
+                    branch.User = selectedUser;
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "Proszę wybrać użytkownika.");
-                    return View(branch);
+                    ModelState.AddModelError(string.Empty, "Wybrany użytkownik jest nieprawidłowy.");
+                    return View(branchViewModel);
                 }
 
                 await _branchService.Add(branch);
                 return RedirectToAction("All");
             }
-            return View(branch);
+
+            var usersWithRoles = await _userManager.GetUsersInRoleAsync("pracownik");
+            usersWithRoles.AddRange(await _userManager.GetUsersInRoleAsync("admin"));
+
+            branchViewModel.Users = usersWithRoles.Select(u => new SelectListItem { Value = u.Id, Text = u.Email }).ToList();
+            return View(branchViewModel);
         }
+
 
         [Authorize(Roles = "admin")]
         [HttpGet]

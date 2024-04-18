@@ -32,3 +32,5 @@ namespace Projekt_ASP_NET.Models
         public virtual List<Reservation>? Reservations { get; set; }
     }
 }
+
+

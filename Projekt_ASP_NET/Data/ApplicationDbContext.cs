@@ -25,12 +25,6 @@ namespace Projekt_ASP_NET.Data
             _configuration = configuration;
         }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    //modelBuilder.Entity<Employee>()
-        //    //    .Property(x => x.Title)
-        //    //    .IsRequired();
-        //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString);

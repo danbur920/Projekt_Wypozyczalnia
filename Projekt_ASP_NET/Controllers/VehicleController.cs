@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,27 +15,43 @@ namespace Projekt_ASP_NET.Controllers
     {
         private readonly IVehicleService _vehicleService;
         private readonly IBranchService _branchService;
+        private readonly IMapper _mapper;
 
-        public VehicleController(IVehicleService vehicleService, IBranchService branchService)
+        public VehicleController(IVehicleService vehicleService, IBranchService branchService, IMapper mapper)
         {
             _vehicleService = vehicleService;
             _branchService = branchService;
+            _mapper = mapper;
         }
+
+        //public async Task<IActionResult> All(VehicleShowViewModel viewModel)
+        //{
+        //    viewModel = new VehicleShowViewModel()
+        //    {
+        //        Vehicles = (List<Vehicle>)await _vehicleService.GetAll(),
+        //        Branches = (List<Branch>)await _branchService.GetAll()
+        //    };
+
+        //    return View(viewModel);
+        //}
 
         public async Task<IActionResult> All(VehicleShowViewModel viewModel)
         {
-            viewModel = new VehicleShowViewModel()
+            var vehicles = await _vehicleService.GetAll();
+            var branches = await _branchService.GetAll();
+
+            var mappedViewModel = new VehicleShowViewModel
             {
-                Vehicles = (List<Vehicle>)await _vehicleService.GetAll(),
-                Branches = (List<Branch>)await _branchService.GetAll()
+                Vehicles = _mapper.Map<List<Vehicle>>(vehicles),
+                Branches = _mapper.Map<List<Branch>>(branches)
             };
 
-            return View(viewModel);
+            return View(mappedViewModel);
         }
+
         public async Task<IActionResult> One(int id)
         {
             ViewBag.Id = id;
-            //var result = _vehicles.Find(x => x.Id == id);
             return View(await _vehicleService.GetById(id));
         }
         [Authorize(Policy = "AdminOrEmployee")]
@@ -96,11 +113,14 @@ namespace Projekt_ASP_NET.Controllers
             var branches = await _branchService.GetAll();
             var branchSelectList = branches.Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Locality }).ToList();
 
-            var viewModel = new VehicleViewModel
-            {
-                Vehicle = vehicle,
-                Branches = branchSelectList
-            };
+            //var viewModel = new VehicleViewModel
+            //{
+            //    Vehicle = vehicle,
+            //    Branches = branchSelectList
+            //};
+
+            var viewModel = _mapper.Map<VehicleViewModel>(vehicle);
+            viewModel.Branches = branchSelectList;
 
             return View(viewModel);
         }
@@ -118,9 +138,12 @@ namespace Projekt_ASP_NET.Controllers
             var branches = await _branchService.GetAll();
             var branchSelectList = branches.Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Locality }).ToList();
 
+
             viewModel.Branches = branchSelectList;
 
             return View(viewModel);
         }
     }
 }
+
+

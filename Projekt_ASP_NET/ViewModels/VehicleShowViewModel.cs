@@ -9,3 +9,4 @@ namespace Projekt_ASP_NET.ViewModels
         public List<Branch>? Branches { get; set; }
     }
 }
+

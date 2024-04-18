@@ -974,3 +974,9 @@ C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\
 C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\Projekt_ASP_NET.pdb
 C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\Projekt_ASP_NET.genruntimeconfig.cache
 C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\obj\Debug\net7.0\ref\Projekt_ASP_NET.dll
+C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Daniel\Desktop\ASP_MVC\Projekt_Wypozyczalnia\Projekt_ASP_NET\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
