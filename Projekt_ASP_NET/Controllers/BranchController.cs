@@ -35,7 +35,6 @@ namespace Projekt_ASP_NET.Controllers
 
             var branchViewModel = new BranchViewModel
             {
-                Branch = new Branch(),
                 //Users = usersWithRoles.Select(u => new SelectListItem { Value = u.Id, Text = u.Email }).ToList()
                 Users = _mapper.Map<List<SelectListItem>>(usersWithRoles)
             };

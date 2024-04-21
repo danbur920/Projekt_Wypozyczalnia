@@ -26,6 +26,10 @@ namespace Projekt_ASP_NET.Mappings
 
             CreateMap<Branch, VehicleShowViewModel>()
                 .ForMember(dest => dest.Branches, opt => opt.MapFrom(src => new List<Branch> { src }));
+
+            CreateMap<LoginViewModel, User>()
+                .ForMember(dest => dest.PasswordHash, opt => opt.MapFrom(opt => opt.Password));
         }
     }
 }
+

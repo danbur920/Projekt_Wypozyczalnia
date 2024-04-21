@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Projekt_ASP_NET.Models;
 
-namespace Projekt_ASP_NET.Validations
+namespace Projekt_ASP_NET.Validations.Models
 {
     public class VehicleValidator : AbstractValidator<Vehicle>
     {
@@ -33,3 +33,4 @@ namespace Projekt_ASP_NET.Validations
         }
     }
 }
+

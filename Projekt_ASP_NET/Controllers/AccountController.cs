@@ -33,8 +33,8 @@ namespace Projekt_ASP_NET.Controllers
                 return View(userLogin);
             }
 
-            await _singInManager.PasswordSignInAsync(userLogin.UserName, userLogin.Password, false, false);
-
+            var user = _mapper.Map<User>(userLogin);
+            await _singInManager.PasswordSignInAsync(user.UserName, user.PasswordHash, false, false);
             return RedirectToAction("Index", "Home");
         }
 

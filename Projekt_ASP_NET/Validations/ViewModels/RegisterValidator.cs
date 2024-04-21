@@ -2,7 +2,7 @@
 using Projekt_ASP_NET.Models;
 using Projekt_ASP_NET.ViewModels;
 
-namespace Projekt_ASP_NET.Validations
+namespace Projekt_ASP_NET.Validations.ViewModels
 {
     public class RegisterValidator : AbstractValidator<RegisterViewModel>
     {
@@ -17,10 +17,10 @@ namespace Projekt_ASP_NET.Validations
 
             RuleFor(x => x.Password)
                 .NotNull().WithMessage("Hasło jest wymagane.")
-                .MinimumLength(8).WithMessage("Hasło musi mieć co najmniej 8 znaków.")
+                .MinimumLength(6).WithMessage("Hasło musi mieć co najmniej 6 znaków.")
                 .Matches("[A-Z]").WithMessage("Hasło musi zawierać co najmniej jedną wielką literę.")
-                .Matches("[a-z]").WithMessage("Hasło musi zawierać co najmniej jedną małą literę.")
-                .Matches("[0-9]").WithMessage("Hasło musi zawierać co najmniej jedną cyfrę.");
+                .Matches("[a-z]").WithMessage("Hasło musi zawierać co najmniej jedną małą literę.");
         }
     }
 }
+

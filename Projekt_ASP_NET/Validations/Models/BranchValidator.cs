@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Projekt_ASP_NET.Models;
 
-namespace Projekt_ASP_NET.Validations
+namespace Projekt_ASP_NET.Validations.Models
 {
     public class BranchValidator : AbstractValidator<Branch>
     {
@@ -19,3 +19,5 @@ namespace Projekt_ASP_NET.Validations
         }
     }
 }
+
+

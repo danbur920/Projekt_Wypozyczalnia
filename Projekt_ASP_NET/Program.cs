@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 using Projekt_ASP_NET.Services.Interfaces;
 using Projekt_ASP_NET.Services;
 using Projekt_ASP_NET.Mappings;
-using Projekt_ASP_NET.Validations;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
 using FluentValidation;
+using Projekt_ASP_NET.Validations.Models;
+using Projekt_ASP_NET.Validations.ViewModels;
 
 namespace Projekt_ASP_NET
 {
@@ -21,12 +22,15 @@ namespace Projekt_ASP_NET
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // Dodanie connection stringa (z appsettings.json) do bazy:
+
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+            // Dodanie repozytoriów i serwisów:
 
             builder.Services.AddScoped<IRepository<Branch>, BranchRepository>();
             builder.Services.AddScoped<IRepository<Vehicle>, VehicleRepository>();
@@ -34,19 +38,26 @@ namespace Projekt_ASP_NET
             builder.Services.AddScoped<IVehicleService, VehicleService>();
             builder.Services.AddScoped<IBranchService, BranchService>();
 
+            // Dodanie automappera:
+
             builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+            // Dodanie identity + zasady has³a:
 
             builder.Services.AddIdentity<User, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 2;
+                options.Password.RequiredLength = 6;
                 options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireLowercase = true;
             })
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddRazorPages();
+
+
+            // Fluent Validation:
 
             builder.Services.AddControllersWithViews().AddFluentValidation();
 
@@ -56,6 +67,11 @@ namespace Projekt_ASP_NET
             builder.Services.AddValidatorsFromAssemblyContaining<BranchValidator>();
             builder.Services.AddValidatorsFromAssemblyContaining<VehicleValidator>();
             builder.Services.AddValidatorsFromAssemblyContaining<RegisterValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<LoginValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<BranchViewModelValidator>();
+
+
+            // Role:
 
             // Seedowanie danych roli
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())
@@ -72,8 +88,13 @@ namespace Projekt_ASP_NET
                     }
                 }
             }
+
+            // Baza danych w pamiêci:
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseInMemoryDatabase(databaseName: "RentalSystem"));
+
+            // Dodanie autoryzacji + stworzenie polityk dostêpowych:
 
             builder.Services.AddAuthorization(options =>
             {
@@ -86,7 +107,6 @@ namespace Projekt_ASP_NET
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
@@ -94,7 +114,7 @@ namespace Projekt_ASP_NET
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                app.UseStatusCodePagesWithRedirects("/Home/AccessDenied"); 
+                app.UseStatusCodePagesWithRedirects("/Home/AccessDenied"); // Przekierowanie w momencie braku dostêpu
                 app.UseHsts();
             }
 
