@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Projekt_ASP_NET.Data;
 
 #nullable disable
 
-namespace Projekt_ASP_NET.Data.Migrations
+namespace Projekt_ASP_NET.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240407193431_migrNew")]
-    partial class migrNew
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -178,12 +175,10 @@ namespace Projekt_ASP_NET.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -220,12 +215,10 @@ namespace Projekt_ASP_NET.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -249,15 +242,12 @@ namespace Projekt_ASP_NET.Data.Migrations
                     b.Property<int?>("NumberOfVehicles")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Branches");
                 });
@@ -270,36 +260,55 @@ namespace Projekt_ASP_NET.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal?>("CenaWypozyczenia")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<DateTime?>("EndOfRental")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal?>("Price")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int?>("ReservationId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ReservationId1")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("StartOfRental")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId1")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("VehicleId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("VehicleId1")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ReservationId")
+                        .IsUnique();
+
+                    b.HasIndex("ReservationId1")
                         .IsUnique()
-                        .HasFilter("[ReservationId] IS NOT NULL");
+                        .HasFilter("[ReservationId1] IS NOT NULL");
+
+                    b.HasIndex("UserId");
 
                     b.HasIndex("UserId1");
 
                     b.HasIndex("VehicleId");
+
+                    b.HasIndex("VehicleId1");
 
                     b.ToTable("Rentals");
                 });
@@ -313,23 +322,27 @@ namespace Projekt_ASP_NET.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime?>("EndOfRental")
+                        .IsRequired()
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("Price")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime?>("StartOfRental")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId1")
+                    b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("VehicleId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId1");
+                    b.HasIndex("UserId");
 
                     b.HasIndex("VehicleId");
 
@@ -415,6 +428,18 @@ namespace Projekt_ASP_NET.Data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Locality")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Street")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StreetNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasDiscriminator().HasValue("User");
                 });
 
@@ -473,7 +498,7 @@ namespace Projekt_ASP_NET.Data.Migrations
                 {
                     b.HasOne("Projekt_ASP_NET.Models.User", "User")
                         .WithMany("Branches")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -481,16 +506,34 @@ namespace Projekt_ASP_NET.Data.Migrations
             modelBuilder.Entity("Projekt_ASP_NET.Models.Rental", b =>
                 {
                     b.HasOne("Projekt_ASP_NET.Models.Reservation", "Reservation")
+                        .WithOne()
+                        .HasForeignKey("Projekt_ASP_NET.Models.Rental", "ReservationId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Projekt_ASP_NET.Models.Reservation", null)
                         .WithOne("Rental")
-                        .HasForeignKey("Projekt_ASP_NET.Models.Rental", "ReservationId");
+                        .HasForeignKey("Projekt_ASP_NET.Models.Rental", "ReservationId1");
 
                     b.HasOne("Projekt_ASP_NET.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Projekt_ASP_NET.Models.User", null)
                         .WithMany("Rentals")
                         .HasForeignKey("UserId1");
 
                     b.HasOne("Projekt_ASP_NET.Models.Vehicle", "Vehicle")
+                        .WithMany()
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Projekt_ASP_NET.Models.Vehicle", null)
                         .WithMany("Rentals")
-                        .HasForeignKey("VehicleId");
+                        .HasForeignKey("VehicleId1");
 
                     b.Navigation("Reservation");
 
@@ -503,11 +546,13 @@ namespace Projekt_ASP_NET.Data.Migrations
                 {
                     b.HasOne("Projekt_ASP_NET.Models.User", "User")
                         .WithMany("Reservations")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId");
 
                     b.HasOne("Projekt_ASP_NET.Models.Vehicle", "Vehicle")
                         .WithMany("Reservations")
-                        .HasForeignKey("VehicleId");
+                        .HasForeignKey("VehicleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
 

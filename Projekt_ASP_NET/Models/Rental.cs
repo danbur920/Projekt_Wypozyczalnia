@@ -10,7 +10,7 @@ namespace Projekt_ASP_NET.Models
         [Required]
         public DateTime? EndOfRental { get; set; }
         [Required]
-        public decimal? CenaWypozyczenia { get; set; }
+        public decimal? Price { get; set; }
         [Required]
         public int? VehicleId { get; set; }
         [Required]

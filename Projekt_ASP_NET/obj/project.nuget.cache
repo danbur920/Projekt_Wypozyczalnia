@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ojv61wqCBEJHx67wNmz3ST9b4R0AQNIAmtZvoavMysvmYOPMuUT1L/J7I1SoHw5G7Kr0SyM0qEWRYNZSz6ZA0w==",
+  "dgSpecHash": "zlGDHboBB94g/opgJBPzaEQt3nV+OZ6B30wRk4fRXuuTaRc80O06BU/ASKuRgPjq5qY96lOorTcoXi6FRoTZQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Daniel\\Desktop\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+  "projectFilePath": "C:\\Users\\Daniel\\Desktop\\ToSort2\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daniel\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Daniel\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Projekt_ASP_NET.Models;
 using Projekt_ASP_NET.ViewModels;
+using System.Security.Claims;
 
 namespace Projekt_ASP_NET.Controllers
 {
@@ -52,12 +53,6 @@ namespace Projekt_ASP_NET.Controllers
                 return View(userRegister);
             }
 
-            //var user = new User
-            //{
-            //    Email = userRegister.Email,
-            //    UserName = userRegister.UserName,
-            //};
-
             var user = _mapper.Map<User>(userRegister);
 
             var result = await _userManager.CreateAsync(user, userRegister.Password);
@@ -85,6 +80,43 @@ namespace Projekt_ASP_NET.Controllers
         public IActionResult AccessDenied()
         {
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var model = _mapper.Map<EditUserViewModel>(user);
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditUserViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByIdAsync(model.Id);
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                var editUser = _mapper.Map<User>(user);
+
+                var result = await _userManager.UpdateAsync(editUser);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return View(model);
         }
     }
 }

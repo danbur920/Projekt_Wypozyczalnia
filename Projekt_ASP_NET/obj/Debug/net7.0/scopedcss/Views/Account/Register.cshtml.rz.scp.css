@@ -1,0 +1,26 @@
+.form-group[b-3mre121e08] {
+    margin-bottom: 10px;
+}
+
+    .form-group span[b-3mre121e08] {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"][b-3mre121e08],
+    .form-group input[type="email"][b-3mre121e08],
+    .form-group input[type="password"][b-3mre121e08] {
+        width: 50%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+button[type="submit"][b-3mre121e08] {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}

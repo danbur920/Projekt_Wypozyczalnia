@@ -17,8 +17,8 @@ namespace Projekt_ASP_NET.Validations.Models
             RuleFor(x => x.VehicleId)
                 .NotNull().WithMessage("Rezerwacja musi mieć przypisany identyfikator wypożyczanego pojazdu.");
 
-            RuleFor(x => x.UserId)
-                .NotNull().WithMessage("Rezerwacja musi mieć przypisany identyfikator wypożyczającego.");
+            //RuleFor(x => x.UserId)
+            //    .NotNull().WithMessage("Rezerwacja musi mieć przypisany identyfikator wypożyczającego.");
         }
     }
 }

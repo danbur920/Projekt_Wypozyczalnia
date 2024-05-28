@@ -73,7 +73,6 @@ namespace Projekt_ASP_NET
 
             // Role:
 
-            // Seedowanie danych roli
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())
             {
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -91,8 +90,8 @@ namespace Projekt_ASP_NET
 
             // Baza danych w pamiêci:
 
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase(databaseName: "RentalSystem"));
+            //builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseInMemoryDatabase(databaseName: "RentalSystem"));
 
             // Dodanie autoryzacji + stworzenie polityk dostêpowych:
 

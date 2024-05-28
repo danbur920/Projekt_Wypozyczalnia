@@ -20,13 +20,12 @@ namespace Projekt_ASP_NET.Validations.Models
             RuleFor(x => x.UserId)
                 .NotNull().WithMessage("Rezerwacja musi mieć przypisany identyfikator wypożyczającego.");
 
-            RuleFor(x => x.CenaWypozyczenia)
+            RuleFor(x => x.Price)
                 .NotNull().WithMessage("Cena wypożyczenia musi być określona.");
 
-            RuleFor(x => x.CenaWypozyczenia)
+            RuleFor(x => x.Price)
                 .GreaterThanOrEqualTo(0).WithMessage("Cena wypożyczenia nie może być ujemna.");
 
         }
     }
 }
-

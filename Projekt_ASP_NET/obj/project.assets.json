@@ -11846,11 +11846,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Daniel\\Desktop\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+      "projectUniqueName": "C:\\Users\\Daniel\\Desktop\\ToSort2\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
       "projectName": "Projekt_ASP_NET",
-      "projectPath": "C:\\Users\\Daniel\\Desktop\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
+      "projectPath": "C:\\Users\\Daniel\\Desktop\\ToSort2\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\Projekt_ASP_NET.csproj",
       "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Daniel\\Desktop\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\obj\\",
+      "outputPath": "C:\\Users\\Daniel\\Desktop\\ToSort2\\ASP_MVC\\Projekt_Wypozyczalnia\\Projekt_ASP_NET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Visual Udostępnione\\NuGetPackages"

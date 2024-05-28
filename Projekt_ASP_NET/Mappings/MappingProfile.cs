@@ -10,6 +10,7 @@ namespace Projekt_ASP_NET.Mappings
         public MappingProfile()
         {
             CreateMap<BranchViewModel, Branch>().ReverseMap();
+            CreateMap<EditUserViewModel, User>().ReverseMap();
 
             CreateMap<User, SelectListItem>()
                 .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Id))

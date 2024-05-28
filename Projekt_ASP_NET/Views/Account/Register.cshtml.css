@@ -1,0 +1,26 @@
+﻿.form-group {
+    margin-bottom: 10px;
+}
+
+    .form-group span {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        width: 50%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+button[type="submit"] {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
