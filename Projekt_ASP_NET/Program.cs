@@ -23,42 +23,28 @@ namespace Projekt_ASP_NET
             var builder = WebApplication.CreateBuilder(args);
 
             // Dodanie connection stringa (z appsettings.json) do bazy:
-
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
+            // Konfiguracja Identity
+            builder.Services.AddDefaultIdentity<User>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            // Dodanie repozytoriów i serwisów:
-
+            // Dodanie repozytoriÃ³w i serwisÃ³w:
             builder.Services.AddScoped<IRepository<Branch>, BranchRepository>();
             builder.Services.AddScoped<IRepository<Vehicle>, VehicleRepository>();
-
             builder.Services.AddScoped<IVehicleService, VehicleService>();
             builder.Services.AddScoped<IBranchService, BranchService>();
 
             // Dodanie automappera:
-
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-            // Dodanie identity + zasady has³a:
-
-            builder.Services.AddIdentity<User, IdentityRole>(options =>
-            {
-                options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 6;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = true;
-                options.Password.RequireLowercase = true;
-            })
-            .AddEntityFrameworkStores<ApplicationDbContext>();
-
+            // Dodanie Razor Pages i Fluent Validation:
             builder.Services.AddRazorPages();
-
-
-            // Fluent Validation:
-
             builder.Services.AddControllersWithViews().AddFluentValidation();
 
             builder.Services.AddValidatorsFromAssemblyContaining<ReservationValidator>();
@@ -70,13 +56,11 @@ namespace Projekt_ASP_NET
             builder.Services.AddValidatorsFromAssemblyContaining<LoginValidator>();
             builder.Services.AddValidatorsFromAssemblyContaining<BranchViewModelValidator>();
 
-
             // Role:
-
             using (var scope = builder.Services.BuildServiceProvider().CreateScope())
             {
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-                string[] roleNames = { "admin", "pracownik", "klient", "goœæ" };
+                string[] roleNames = { "admin", "operator", "uÅ¼ytkownik" };
 
                 foreach (var roleName in roleNames)
                 {
@@ -88,13 +72,7 @@ namespace Projekt_ASP_NET
                 }
             }
 
-            // Baza danych w pamiêci:
-
-            //builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseInMemoryDatabase(databaseName: "RentalSystem"));
-
-            // Dodanie autoryzacji + stworzenie polityk dostêpowych:
-
+            // Dodanie autoryzacji i polityk dostÄ™powych:
             builder.Services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdminOrEmployee", policy =>
@@ -113,7 +91,7 @@ namespace Projekt_ASP_NET
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                app.UseStatusCodePagesWithRedirects("/Home/AccessDenied"); // Przekierowanie w momencie braku dostêpu
+                app.UseStatusCodePagesWithRedirects("/Home/AccessDenied"); // Przekierowanie w momencie braku dostÄ™pu
                 app.UseHsts();
             }
 
@@ -125,6 +103,9 @@ namespace Projekt_ASP_NET
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.MapControllerRoute(
+                name: "areas",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
