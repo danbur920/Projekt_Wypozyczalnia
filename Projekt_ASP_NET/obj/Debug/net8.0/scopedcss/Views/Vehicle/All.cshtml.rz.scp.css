@@ -1,0 +1,57 @@
+.table[b-l4qhi9cg4u] {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th[b-l4qhi9cg4u], .table td[b-l4qhi9cg4u] {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .table th[b-l4qhi9cg4u] {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    .table tbody tr:nth-child(even)[b-l4qhi9cg4u] {
+        background-color: #f2f2f2;
+    }
+
+    .table tbody tr:hover[b-l4qhi9cg4u] {
+        background-color: #ddd;
+    }
+
+.combobox[b-l4qhi9cg4u] {
+    position: relative;
+    display: inline-block;
+}
+
+.select[b-l4qhi9cg4u] {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options[b-l4qhi9cg4u] {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    display: none;
+    width: 200px;
+}
+
+.option[b-l4qhi9cg4u] {
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .option:hover[b-l4qhi9cg4u] {
+        background-color: #f0f0f0;
+    }

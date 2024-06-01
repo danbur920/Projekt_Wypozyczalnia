@@ -1,0 +1,90 @@
+﻿@model Projekt_ASP_NET.Areas.Admin.ViewModels.EditUserViewModel
+
+<h2>Edytuj Dane Użytkownika</h2>
+
+@using (Html.BeginForm("Edit", "User", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    @Html.HiddenFor(x => x.Id)
+
+    <div class="form-group">
+        <span>Login:</span>
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Imię:</span>
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Nazwisko:</span>
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Email:</span>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Miejscowość:</span>
+        @Html.TextBoxFor(x => x.Locality, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <span>Ulica:</span>
+        @Html.TextBoxFor(x => x.Street, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Numer domu/mieszkania:</span>
+        @Html.TextBoxFor(x => x.StreetNumber, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Ranga użytkownika:</span>
+        @Html.DropDownListFor(x => x.UserType,
+                new SelectList(new[]
+                {
+                    new SelectListItem { Text = "Bronze", Value = "Bronze" },
+                    new SelectListItem { Text = "Silver", Value = "Silver" },
+                    new SelectListItem { Text = "Gold", Value = "Gold" }
+                }, "Value", "Text"),
+                new { @class = "form-control" })
+    </div>
+
+    <h3>Zmień hasło użytkownika:</h3>
+
+    <div class="form-group">
+        <span>Nowe hasło:</span> 
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Potwierdź nowe hasło:</span> 
+        @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ConfirmPassword)
+    </div>
+
+    <h3>Zarządzaj dostępem:</h3>
+
+    <div class="form-group">
+        <span>Zmień rolę użytkownika:</span>
+        @Html.DropDownListFor(x=>x.UserRole, 
+            new SelectList(new[]
+            {
+                new SelectListItem {Text = "Użytkownik", Value="użytkownik"},
+                new SelectListItem {Text = "Operator", Value="operator"},
+                new SelectListItem {Text = "Admin", Value="admin"}
+            }, "Value", "Text"),
+            new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <span>Zablokuj użytkownika:</span>
+        @Html.CheckBoxFor(x => x.IsBlockingUser, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+}

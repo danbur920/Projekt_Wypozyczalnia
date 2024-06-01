@@ -1,0 +1,333 @@
+@import '_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css';
+
+/* _content/Projekt_ASP_NET/Areas/Admin/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-ircnutv2uw] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-ircnutv2uw] {
+  color: #0077cc;
+}
+
+.btn-primary[b-ircnutv2uw] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-ircnutv2uw], .nav-pills .show > .nav-link[b-ircnutv2uw] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-ircnutv2uw] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-ircnutv2uw] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-ircnutv2uw] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-ircnutv2uw] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-ircnutv2uw] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+/* _content/Projekt_ASP_NET/Areas/Operator/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-ls3omfplpp] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-ls3omfplpp] {
+  color: #0077cc;
+}
+
+.btn-primary[b-ls3omfplpp] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-ls3omfplpp], .nav-pills .show > .nav-link[b-ls3omfplpp] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-ls3omfplpp] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-ls3omfplpp] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-ls3omfplpp] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-ls3omfplpp] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-ls3omfplpp] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+/* _content/Projekt_ASP_NET/Other/Account/Edit.cshtml.rz.scp.css */
+.form-group[b-33xfyozhzg] {
+    margin-bottom: 10px;
+}
+
+    .form-group span[b-33xfyozhzg] {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"][b-33xfyozhzg],
+    .form-group input[type="email"][b-33xfyozhzg],
+    .form-group input[type="password"][b-33xfyozhzg] {
+        width: 40%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+button[type="submit"][b-33xfyozhzg] {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+/* _content/Projekt_ASP_NET/Other/Account/Login.cshtml.rz.scp.css */
+
+.form-group[b-338lphfpxy] {
+    margin-bottom: 10px;
+}
+
+.form-group span[b-338lphfpxy] {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"][b-338lphfpxy],
+.form-group input[type="email"][b-338lphfpxy],
+.form-group input[type="password"][b-338lphfpxy] {
+    width: 40%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"][b-338lphfpxy] {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* _content/Projekt_ASP_NET/Other/Account/Register.cshtml.rz.scp.css */
+.form-group[b-01ubry7oib] {
+    margin-bottom: 10px;
+}
+
+    .form-group span[b-01ubry7oib] {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"][b-01ubry7oib],
+    .form-group input[type="email"][b-01ubry7oib],
+    .form-group input[type="password"][b-01ubry7oib] {
+        width: 50%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+button[type="submit"][b-01ubry7oib] {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+/* _content/Projekt_ASP_NET/Views/Shared/Policy/_CookiePolicy.cshtml.rz.scp.css */
+div[b-u7qubiezfk] {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container[b-u7qubiezfk] {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2[b-u7qubiezfk] {
+    margin-top: 20px;
+}
+
+p[b-u7qubiezfk] {
+    margin-bottom: 20px;
+}
+/* _content/Projekt_ASP_NET/Views/Shared/Policy/_PrivacyPolicy.cshtml.rz.scp.css */
+div[b-njjn4wowyf] {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container[b-njjn4wowyf] {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2[b-njjn4wowyf] {
+    margin-top: 20px;
+}
+
+p[b-njjn4wowyf] {
+    margin-bottom: 20px;
+}
+/* _content/Projekt_ASP_NET/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-4bn5apuhzq] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-4bn5apuhzq] {
+  color: #0077cc;
+}
+
+.btn-primary[b-4bn5apuhzq] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-4bn5apuhzq], .nav-pills .show > .nav-link[b-4bn5apuhzq] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-4bn5apuhzq] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-4bn5apuhzq] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-4bn5apuhzq] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-4bn5apuhzq] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-4bn5apuhzq] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+/* _content/Projekt_ASP_NET/Views/Vehicle/All.cshtml.rz.scp.css */
+.table[b-l4qhi9cg4u] {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th[b-l4qhi9cg4u], .table td[b-l4qhi9cg4u] {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .table th[b-l4qhi9cg4u] {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    .table tbody tr:nth-child(even)[b-l4qhi9cg4u] {
+        background-color: #f2f2f2;
+    }
+
+    .table tbody tr:hover[b-l4qhi9cg4u] {
+        background-color: #ddd;
+    }
+
+.combobox[b-l4qhi9cg4u] {
+    position: relative;
+    display: inline-block;
+}
+
+.select[b-l4qhi9cg4u] {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.options[b-l4qhi9cg4u] {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    display: none;
+    width: 200px;
+}
+
+.option[b-l4qhi9cg4u] {
+    padding: 10px;
+    cursor: pointer;
+}
+
+    .option:hover[b-l4qhi9cg4u] {
+        background-color: #f0f0f0;
+    }

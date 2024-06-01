@@ -201,7 +201,7 @@ namespace Projekt_ASP_NET.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    await _userManager.AddToRoleAsync(user, "admin");
+                    await _userManager.AddToRoleAsync(user, "użytkownik");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

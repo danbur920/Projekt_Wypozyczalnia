@@ -13,6 +13,8 @@ using FluentValidation.AspNetCore;
 using FluentValidation;
 using Projekt_ASP_NET.Validations.Models;
 using Projekt_ASP_NET.Validations.ViewModels;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.OpenApi.Models;
 
 namespace Projekt_ASP_NET
 {
@@ -45,7 +47,10 @@ namespace Projekt_ASP_NET
 
             // Dodanie Razor Pages i Fluent Validation:
             builder.Services.AddRazorPages();
-            builder.Services.AddControllersWithViews().AddFluentValidation();
+            builder.Services.AddControllersWithViews().AddFluentValidation().AddRazorRuntimeCompilation();
+
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
             builder.Services.AddValidatorsFromAssemblyContaining<ReservationValidator>();
             builder.Services.AddValidatorsFromAssemblyContaining<RentalValidator>();
@@ -75,11 +80,8 @@ namespace Projekt_ASP_NET
             // Dodanie autoryzacji i polityk dostępowych:
             builder.Services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminOrEmployee", policy =>
-                    policy.RequireRole("admin", "pracownik"));
-
-                options.AddPolicy("EmployeeOrCustomer", policy =>
-                    policy.RequireRole("pracownik", "klient"));
+                options.AddPolicy("AdminOrOperator", policy =>
+                    policy.RequireRole("admin", "operator"));
             });
 
             var app = builder.Build();
@@ -104,11 +106,16 @@ namespace Projekt_ASP_NET
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "areas",
-                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                 name: "areas",
+                 pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
             app.MapRazorPages();
 
             app.Run();

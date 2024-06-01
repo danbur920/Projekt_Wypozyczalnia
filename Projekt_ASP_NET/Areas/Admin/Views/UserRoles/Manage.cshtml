@@ -1,0 +1,17 @@
+﻿@model Rentals.Areas.Admin.Models.ManageUserRolesViewModel
+
+<h2>Zarządzaj rolami użytkownika</h2>
+
+<h4>@Model.Email</h4>
+
+<form asp-action="Manage" method="post">
+    <input type="hidden" asp-for="UserId" />
+    @foreach (var role in Model.Roles)
+    {
+        <div>
+            <input type="checkbox" name="AssignedRoles" value="@role.Name" @(Model.AssignedRoles.Contains(role.Name) ? "checked" : "") />
+            <label>@role.Name</label>
+        </div>
+    }
+    <button type="submit">Zapisz</button>
+</form>

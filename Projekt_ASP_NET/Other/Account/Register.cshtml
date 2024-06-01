@@ -1,0 +1,38 @@
+﻿@* @model Projekt_ASP_NET.ViewModels.RegisterViewModel
+
+<h2>Rejestracja</h2>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+    ;
+    <div class="form-group">
+        <span>Imię:</span> @Html.TextBoxFor(x => x.FirstName, new { placeholder = "Podaj imię" })
+    </div>
+    <div class="form-group">
+        <span>Nazwisko:</span> @Html.TextBoxFor(x => x.LastName, new { placeholder = "Podaj nazwisko" })
+    </div>
+    <div class="form-group">
+        <span>Login:</span> @Html.TextBoxFor(x => x.UserName, new { placeholder = "Podaj login" })
+    </div>
+    <div class="form-group">
+        <span>Email:</span> @Html.TextBoxFor(x => x.Email, new { placeholder = "Podaj email" })
+    </div>
+    <div class="form-group">
+        <span>Hasło:</span> @Html.PasswordFor(x => x.Password, new { placeholder = "Podaj hasło" })
+    </div>
+    <div class="form-group">
+        <span>Miejscowość:</span> @Html.TextBoxFor(x => x.Locality, new { placeholder = "Podaj miejscowość" })
+    </div>
+    <div class="form-group">
+        <span>Ulica:</span> @Html.TextBoxFor(x => x.Street, new { placeholder = "Podaj ulicę" })
+    </div>
+    <div class="form-group">
+        <span>Numer domu/mieszkania:</span> @Html.TextBoxFor(x => x.StreetNumber, new { placeholder = "Podaj numer domu/mieszkania" })
+    </div>
+    @Html.HiddenFor(x => x.UserType, new { value = "Bronze" })
+
+    <button type="submit">Zarejestruj</button>
+}
+
+ *@

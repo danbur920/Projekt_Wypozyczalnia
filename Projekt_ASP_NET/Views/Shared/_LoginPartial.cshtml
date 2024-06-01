@@ -28,6 +28,15 @@
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
     }
+
+    @if(User.IsInRole("admin"))
+    {
+        <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin panel</a>
+    }
+    @if(User.IsInRole("admin") || User.IsInRole("operator"))
+    {
+        <a class="nav-link text-dark" asp-area="Operator" asp-controller="Home" asp-action="Index">Operator panel</a>
+    }
 </ul>
 
 @* https://localhost:7246/Identity/Account/Manage *@

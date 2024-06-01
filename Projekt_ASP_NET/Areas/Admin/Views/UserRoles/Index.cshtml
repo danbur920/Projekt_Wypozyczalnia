@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Rentals.Areas.Admin.Models.UserRoleViewModel>
+
+<h2>Użytkownicy i Role</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@string.Join(", ", user.Roles)</td>
+                <td>
+                    <a asp-action="Manage" asp-route-userId="@user.UserId">Zarządzaj rolami</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

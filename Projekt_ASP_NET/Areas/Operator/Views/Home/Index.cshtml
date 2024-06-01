@@ -1,0 +1,42 @@
+﻿@model Projekt_ASP_NET.Areas.Operator.ViewModels.RentalsViewModel
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@{
+    var successMessage = (string)TempData["SuccessMessage"];
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Użytkownicy</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Pozycja</th>
+                        <th>Pojazd</th>
+                        <th>Oddział</th>
+                        <th>Sumaryczna ilość wypożyczeń</th>
+                        <th>Sumaryczna ilość wypożyczających</th>
+                        <th>Średnia długość wypożyczenia</th>
+                        <th>Zysk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
